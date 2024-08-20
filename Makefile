@@ -12,3 +12,9 @@ commit:
 	git add .
 	git commit -m "$(m)"
 	git push origin main
+
+# Hard reset the repository to the last pushed state, including ignored files
+hard-reset:
+	@git fetch origin
+	@git reset --hard origin/main
+	@git clean -fdx
